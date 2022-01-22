@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HelpController;
+use App\Http\Controllers\ProfilController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +26,6 @@ Route::get('login',function(){
 Route::get('detail',function(){
     return view('detail');
 });
+
+Route::get('help', [HelpController::class, 'index']);
+Route::get('profil', [ProfilController::class, 'index']);
