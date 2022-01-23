@@ -27,5 +27,16 @@ Route::get('detail',function(){
     return view('detail');
 });
 
+Route::get('berandaAdmin',function(){
+    return view('admin/berandaAdmin');
+});
+
+Route::get('bukuAdmin',function(){
+    return view('admin/bukuAdmin');
+});
+
+Route::get('tambahBuku',function(){
+    return view('admin/tambahBuku');
+});
 Route::get('help', [HelpController::class, 'index']);
 Route::get('profil', [ProfilController::class, 'index']);
