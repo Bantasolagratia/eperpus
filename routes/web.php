@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelpController;
 use App\Http\Controllers\ProfilController;
-
-
+use App\Http\Controllers\bukuController;
+use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,3 +40,7 @@ Route::get('tambahBuku',function(){
 });
 Route::get('help', [HelpController::class, 'index']);
 Route::get('profil', [ProfilController::class, 'index']);
+Route::post('tambahbuku',[bukuController::class, 'tambahbuku']);
+Route::get('bukuAdmin',[bukuController::class, 'showbooks']);
+Route::post('registerPost',[Controller::class, 'registerPost']);
+Route::post('getin',[Controller::class, 'getin']);

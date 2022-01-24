@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="input-6">Kategori</label>
-                                <input type="text" class="form-control form-control-rounded" id="kategori" name="ketegori" placeholder="Masukkan Kategori dan pisahkan dengan spasi">
+                                <input type="text" class="form-control form-control-rounded" id="kategori" name="kategori" placeholder="Masukkan Kategori dan pisahkan dengan spasi">
                             </div>
                             <div class="form-group">
                                 <label for="input-8" class ="col-form-label form-control-label">File Buku</label>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-light btn-round px-5"><i class="icon-lock"></i> Simpan</button>
-                                <button type="submit" class="btn btn-secondary btn-round px-5">Batal</button>
+                                <button type="submit"  class="btn btn-secondary btn-round px-5">Batal</button>
                             </div>
                         </form>
                     </div>

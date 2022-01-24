@@ -8,14 +8,16 @@
             <a href=""><img src="../image/cover/2.png" ></a>    
           </div>
       </div> -->
-
+      <form method="post" enctype="multipart/form-data" action="{{url('/tambahbuku')}}">
+        {{ csrf_field() }}
     <div class="location" id="home" style="background:rgba(250,250,250,0.12);">
         <div class="">
             <center><textarea  cols="140"  style="margin-top:70px; height:200px; padding: 10px; background:#C4C4C4;" placeholder="masukkan pertanyaan atau masukan..."></textarea></center>
         </div>
         <div class="mr-4">
-            <input type="button" class="btn2 mt-4 float-right" value="Kirim">
+            <input type="submit" class="btn2 mt-4 float-right" value="Kirim">
         </div>
+    </form>
         <hr height="20px">
     
         <div class="col-md-12 ml-2 row">
