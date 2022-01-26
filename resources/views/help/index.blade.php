@@ -8,6 +8,7 @@
             <a href=""><img src="../image/cover/2.png" ></a>    
           </div>
       </div> -->
+<section class="main-container" >
       <form method="post" enctype="multipart/form-data" action="{{url('/tambahbuku')}}">
         {{ csrf_field() }}
     <div class="location" id="home" style="background:rgba(250,250,250,0.12);">
@@ -65,5 +66,5 @@
             </div>
         </div>
     </div>
-
+</sectopm>
 @endsection

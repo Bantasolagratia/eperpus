@@ -13,7 +13,7 @@
   <div class="wrapper">
 
     <!-- HEADER -->
-    <header>
+    <header class="sticky-top navbar-expand-lg">
       <div class="netflixLogo">
         <a id="logo" href="#home"><img src="../image/logo.png" alt="Logo Image"></a>
       </div>      
@@ -35,9 +35,7 @@
     <!-- END OF HEADER -->
     
     <!-- MAIN CONTAINER -->
-    <section class="main-container" >
         @yield('contents')
-    </section>
     <!-- END OF MAIN CONTAINER -->
 
     <!-- LINKS -->

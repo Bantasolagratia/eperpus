@@ -44,3 +44,5 @@ Route::post('tambahbuku',[bukuController::class, 'tambahbuku']);
 Route::get('bukuAdmin',[bukuController::class, 'showbooks']);
 Route::post('registerPost',[Controller::class, 'registerPost']);
 Route::post('getin',[Controller::class, 'getin']);
+
+Route::get('buku/detail', [bukuController::class, 'detail']);
