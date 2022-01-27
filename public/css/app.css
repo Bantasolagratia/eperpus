@@ -43,12 +43,12 @@
     padding: 0;
   }
   
+  
   /* HEADER */
   header {
     padding: 20px 20px 20px 20px;
-    position: fixed;
     top: 0;
-    display: grid;  
+    display: grid; 
     grid-gap:5px;
     grid-template-columns: 1fr 5fr 1fr;
     grid-template-areas: 
@@ -57,15 +57,18 @@
     width: 100%;
     margin-bottom: 0px;  
   }
+
+  .main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling */
+  }
   
   .netflixLogo {
-   
     object-fit: cover;
     width: 100px;
     max-height: 100%;
-    
     padding-left: 30px;
-    
   }
   
   .netflixLogo img {  
@@ -112,7 +115,16 @@
   
   /* MAIN CONTIANER */
   .main-container {
-    padding: 50px;
+    padding-top: 0%;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+  }
+
+
+  .detail{
+    background:rgba(250,250,250,0.12);
+    padding:20px;
   }
 
   
@@ -621,4 +633,24 @@ h6 span{
 	height: 26px;
 	width: auto;
 	display: block;
+}
+
+.centered {
+  position: absolute;
+  width: 170px;
+  background:rgba(255,255,255,0.8);
+  transform: translate(0%, -100%);
+  color: black;
+}
+
+.text_area{
+  width: 80%;
+  height:200px; 
+  padding: 10px; 
+  background:#C4C4C4;
+}
+
+.input_text{
+  background:#C4C4C4;
+  border-radius: 5%;
 }

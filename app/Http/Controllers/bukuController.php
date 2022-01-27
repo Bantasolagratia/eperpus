@@ -43,6 +43,9 @@ class bukuController extends Controller
         }
 
 
+        public function detail(){
+            return view('detail');
+        }
 
 
   

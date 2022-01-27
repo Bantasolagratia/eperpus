@@ -56,6 +56,7 @@ Route::post('tambahbuku',[bukuController::class, 'tambahbuku']);
 Route::get('bukuAdmin',[bukuController::class, 'showbooks']);
 Route::post('registerPost',[Controller::class, 'registerPost']);
 Route::post('getin',[Controller::class, 'getin']);
+
 Route::get('/',[Controller::class, 'indexing']);
 Route::get('berandaUser',[Controller::class, 'indexingUser']);
 Route::get('logout',[Controller::class, 'logout']);
@@ -65,4 +66,6 @@ Route::get('deleteTanya/{id}',[HelpController::class, 'deleteTanya']);
 Route::get('jawablah/{id}',[HelpController::class, 'jawablah']);
 Route::post('kasihpaham',[HelpController::class, 'kasihpaham']);
 
+
 Route::get('buku/detail', [bukuController::class, 'detail']);
+
