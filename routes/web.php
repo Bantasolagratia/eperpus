@@ -64,3 +64,5 @@ Route::get('berandaAdmin',[HelpController::class, 'showQu']);
 Route::get('deleteTanya/{id}',[HelpController::class, 'deleteTanya']);
 Route::get('jawablah/{id}',[HelpController::class, 'jawablah']);
 Route::post('kasihpaham',[HelpController::class, 'kasihpaham']);
+
+Route::get('buku/detail', [bukuController::class, 'detail']);
