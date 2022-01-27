@@ -5,9 +5,14 @@
       <div class="location" id="home">
           <h1 id="home">Daily</h1>
           <div class="box">
-            <a href="detail"><img src="../image/cover/1.jpeg" ></a>
-            <a href=""><img src="../image/cover/2.png" ></a>    
+            @foreach ($data as $d)
+           
+            <a href="detail"><img src="img/cover/{{$d->cover}}" ></a>
+           
+            @endforeach
+            
           </div>
+          
       </div>
       
 
@@ -23,23 +28,32 @@
 
       </div>
       
-      <h1 id="tvShows">Sastra</h1>
+      <h1 id="tvShows">Novel</h1>
       <div class="box">
-        <a href=""><img src="../image/cover/11.jpg" ></a>
-        <a href=""><img src="../image/cover/12.jpg" ></a>  
-        <a href=""><img src="../image/cover/13.jpg" ></a>       
-        <a href=""><img src="../image/cover/14.jpg" ></a>    
-        <a href=""><img src="../image/cover/15.jpg" ></a>
-        <a href=""><img src="../image/cover/16.jpg" ></a>
+        @foreach ($nov as $o)
+        
+        <a href="detail"><img src="img/cover/{{$o->cover}}" ></a>
+        
+        @endforeach
+      </div>
+
+      <h1 id="tvShows">Edukasi</h1>
+      <div class="box">
+        @foreach ($edu as $p)
+       
+        <a href="detail"><img src="img/cover/{{$p->cover}}" ></a>
+       
+        @endforeach
       </div>
       
 
       <h1 id="originals">Khusus</h1>
       <div class="box">
-        <a href=""><img src="../image/cover/17.jpg" ></a>       
-        <a href=""><img src="../image/cover/18.jpg" ></a>         
-        <a href=""><img src="../image/cover/16.jpg" ></a>
-        <a href=""><img src="../image/cover/19.jpg" ></a>
+        @foreach ($kus as $t)
+        
+        <a href="detail"><img src="img/cover/{{$t->cover}}" ></a>
+        
+        @endforeach
       </div>
 
 @endsection
