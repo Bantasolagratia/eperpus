@@ -1,7 +1,12 @@
 @extends('layout.layout')
 @section('contents')
 
+
       <form method="post" enctype="multipart/form-data" action="{{url('/nanyak')}}">
+
+
+
+     
         {{ csrf_field() }}
     <div class="location" id="home" style="background:rgba(250,250,250,0.12);">
         <div class="">
@@ -45,5 +50,5 @@
         @endforeach
         
     </div>
-
+</sectopm>
 @endsection
