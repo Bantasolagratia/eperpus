@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class pertanyaan extends Model
 {
-    use HasFactory;
+    protected $table = 'pertanyaan';
+    protected $primaryKey = 'id';
+    protected $fillable = [
+        'id','nomor_diskusi','tipe','id_user','content'
+    ];
+    public $timestamps = false;
 }
