@@ -30,7 +30,6 @@
        
         <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
         <a href="{{ url('/login') }}">Masuk</a>        
-
       </nav>      
     </header>
     <!-- END OF HEADER -->
