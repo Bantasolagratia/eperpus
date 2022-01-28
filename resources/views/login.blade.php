@@ -35,7 +35,7 @@
     <!-- HEADER -->
     <header>
       <div class="netflixLogo">
-        <a id="logo" href="#home"><img src="../image/logo.png" alt="Logo Image"></a>
+        <a id="logo" href="/"><img src="../image/logo.png" alt="Logo Image"></a>
       </div>      
       <nav class="main-nav">                
        <div class="search">
@@ -46,10 +46,10 @@
       </div>
       </nav>
       <nav class="sub-nav">
-        <a href="#">Bantuan</a>
+        <a href="help">Bantuan</a>
        
-        <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
-        <a href="#">login</a>        
+        
+        <a href="login">login</a>        
       </nav>      
     </header>
     <!-- END OF HEADER -->

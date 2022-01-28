@@ -15,7 +15,7 @@
     <!-- HEADER -->
     <header class="sticky-top navbar-expand-lg">
       <div class="netflixLogo">
-        <a id="logo" href="#home"><img src="../image/logo.png" alt="Logo Image"></a>
+        <a id="logo" href="/"><img src="../image/logo.png" alt="Logo Image"></a>
       </div>      
       <nav class="main-nav">                
        <div class="search">
@@ -30,6 +30,7 @@
        
         <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
         <a href="{{ url('/login') }}">Masuk</a>        
+
       </nav>      
     </header>
     <!-- END OF HEADER -->

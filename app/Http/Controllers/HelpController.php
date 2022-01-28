@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Help;
+use Illuminate\Support\Facades\DB;
+use App\Models\pertanyaan;
 use Illuminate\Http\Request;
 
 class HelpController extends Controller
@@ -12,9 +12,27 @@ class HelpController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view("help.index");
+    public function ruler()
+    {   
+        
+            // $forum = DB::table('pertanyaan')
+            //     ->select('nomor_diskusi', DB::raw('count(*) as total'))             
+            //     // ->select('*')
+            //     ->groupBy('nomor_diskusi')
+            //     ->select()
+            //     ->get();
+
+            // $forum = pertanyaan::select("*", DB::raw("count(*) as total"))
+            // ->groupBy(DB::raw("nomor_diskusi"))
+            // ->get();       
+           
+            $pertanyaan = DB::table("pertanyaan")
+            ->where('tipe', 'pertanyaan')
+            ->get();
+            $jawaban = DB::table("pertanyaan")
+            ->where('tipe', 'jawaban')
+            ->get();
+        return view('help.index',['pertanyaan'=> $pertanyaan, 'jawaban' => $jawaban]);
     }
 
     /**
@@ -22,9 +40,16 @@ class HelpController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function nanyak(Request $request)
+    {   
+        $quest = new pertanyaan;
+        $quest->content = $request->content;
+        $quest->tipe = $request->tipe;
+        $quest->nomor_diskusi = rand(10,100);
+        $quest->save();
+
+        return redirect('help');
+        
     }
 
     /**
@@ -44,10 +69,14 @@ class HelpController extends Controller
      * @param  \App\Models\Help  $help
      * @return \Illuminate\Http\Response
      */
-    public function show(Help $help)
-    {
-        //
+    public function showQu(){    
+        
+        
+        $tanya =pertanyaan::all();
+        
+        return view('Admin.berandaAdmin',['tanya'=> $tanya]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -67,19 +96,34 @@ class HelpController extends Controller
      * @param  \App\Models\Help  $help
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Help $help)
-    {
-        //
+   
+    public function jawablah($id){     
+        
+        $data = pertanyaan::findOrFail($id);
+
+        return view('admin/jawab', compact('data'));
+    }
+    
+    public function kasihpaham(Request $request)
+    {   
+        $quest = new pertanyaan;
+        $quest->content = $request->content;
+        $quest->tipe = $request->tipe;
+        $quest->nomor_diskusi = $request->nomor_diskusi;
+        $quest->id_user = 0;
+        $quest->save();
+
+        return redirect('berandaAdmin');
+        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Help  $help
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Help $help)
-    {
-        //
+    public function deleteTanya($id){    
+        
+        pertanyaan::find($id)->delete();
+    
+        return redirect('berandaAdmin');
     }
+
+    
+
 }

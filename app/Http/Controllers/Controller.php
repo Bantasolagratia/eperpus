@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\User;
+use App\Models\buku;
 use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +21,6 @@ class Controller extends BaseController
     public function registerPost(Request $request){    
             
         $this->validate($request,[
-            
             'password'=>'required',
             ]);
 
@@ -67,11 +67,12 @@ public function getin(Request $request){
                 
                 Session::put('id',$data->id);
                 Session::put('nama',$data->nama);
+                Session::put('username',$data->username);
                 Session::put('email',$data->email);
                 Session::put('password',$data->password);
                 Session::put('login',TRUE);
                 
-                return redirect('/');
+                return redirect('berandaUser');
                            
         }
         else{
@@ -83,5 +84,56 @@ public function getin(Request $request){
 
 }
 
+    public function indexing(){
+        Session::put('login',FALSE);
+        $data = DB::table('buku')
+        ->inRandomOrder()
+        ->LIMIT(2)
+        ->get();
+
+        $edu = DB::table('buku')
+        ->Where('kategori','LIKE','%' . 'edukasi' . '%')
+        ->get();
+
+        $nov = DB::table('buku')
+        ->Where('kategori','LIKE','%' . 'novel' . '%')
+        ->get();
+
+        $kus = DB::table('buku')
+        ->Where('kategori','LIKE','%' . 'khusus' . '%')
+        ->get();
+
+       
+        return view('welcome',['data'=> $data,'edu'=>$edu,'nov'=>$nov,'kus'=>$kus]);
+    }
+    public function indexingUser(){
+        $data = DB::table('buku')
+        ->inRandomOrder()
+        ->LIMIT(3)
+        ->get();
+
+        $edu = DB::table('buku')
+        ->Where('kategori','LIKE','%' . 'edukasi' . '%')
+        ->get();
+
+        $nov = DB::table('buku')
+        ->Where('kategori','LIKE','%' . 'novel' . '%')
+        ->get();
+
+        $kus = DB::table('khusus')
+        ->get();
+
+       
+        return view('user/welcome',['data'=> $data,'edu'=>$edu,'nov'=>$nov,'kus'=>$kus]);
+    }
+
+
+    public function logout(){
+        Session::flush();
+     
+        return redirect('login')->with('alert','Kamu sudah logout');
+    }
+
+        
 }
 
