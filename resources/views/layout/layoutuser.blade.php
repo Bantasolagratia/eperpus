@@ -23,7 +23,7 @@
     <!-- HEADER -->
     <header>
       <div class="netflixLogo">
-        <a id="logo" href="#home"><img src="../image/logo.png" alt="Logo Image"></a>
+        <a id="logo" href="berandaUser"><img src="../image/logo.png" alt="Logo Image"></a>
       </div>      
       <nav class="main-nav">                
        <div class="search">
@@ -34,7 +34,7 @@
       </div>
       </nav>
       <nav class="sub-nav">
-        <a href="help">Bantuan</a>
+        <a href="bantuanUser">Bantuan</a>
         <a class="nav-link dropdown-toggle dropdown-toggle" data-toggle="dropdown" href="#">{{Session::get('username')}}</a> 
         <ul class="dropdown-menu dropdown-menu-right" style="background-color: rgb(104, 100, 100);">
           <li class="dropdown-item user-details">
@@ -42,8 +42,8 @@
               <div class="media" >
                 
                <div class="media-body">
-               <h6 class="mt-2 user-title">{{Session::get('nama')}}</h6>
-               <p class="user-subtitle">{{Session::get('email')}}</p>
+               <a href="profil"><h6 class="mt-2 user-title">profile</h6></a>
+               
                </div>
               </div>
              </a>

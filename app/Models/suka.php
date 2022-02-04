@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class suka extends Model
 {
-    use HasFactory;
+    protected $table = 'suka';
+    protected $primaryKey = 'id_suka';
+    protected $fillable = [
+        'id_suka','id_user','ISBN'
+    ];
+    public $timestamps = false;
 }

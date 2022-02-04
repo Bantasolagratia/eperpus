@@ -15,16 +15,6 @@ class HelpController extends Controller
     public function ruler()
     {   
         
-            // $forum = DB::table('pertanyaan')
-            //     ->select('nomor_diskusi', DB::raw('count(*) as total'))             
-            //     // ->select('*')
-            //     ->groupBy('nomor_diskusi')
-            //     ->select()
-            //     ->get();
-
-            // $forum = pertanyaan::select("*", DB::raw("count(*) as total"))
-            // ->groupBy(DB::raw("nomor_diskusi"))
-            // ->get();       
            
             $pertanyaan = DB::table("pertanyaan")
             ->where('tipe', 'pertanyaan')
@@ -33,6 +23,19 @@ class HelpController extends Controller
             ->where('tipe', 'jawaban')
             ->get();
         return view('help.index',['pertanyaan'=> $pertanyaan, 'jawaban' => $jawaban]);
+    }
+
+    public function ruler2()
+    {   
+        
+           
+            $pertanyaan = DB::table("pertanyaan")
+            ->where('tipe', 'pertanyaan')
+            ->get();
+            $jawaban = DB::table("pertanyaan")
+            ->where('tipe', 'jawaban')
+            ->get();
+        return view('user.bantuanUser',['pertanyaan'=> $pertanyaan, 'jawaban' => $jawaban]);
     }
 
     /**
@@ -49,6 +52,19 @@ class HelpController extends Controller
         $quest->save();
 
         return redirect('help');
+        
+    }
+
+    public function nanyak2(Request $request)
+    {   
+        $quest = new pertanyaan;
+        $quest->id_user = $request->id_user;
+        $quest->content = $request->content;
+        $quest->tipe = $request->tipe;
+        $quest->nomor_diskusi = rand(10,100);
+        $quest->save();
+
+        return redirect('bantuanUser');
         
     }
 

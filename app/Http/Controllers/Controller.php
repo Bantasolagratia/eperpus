@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\User;
 use App\Models\buku;
+use App\Models\khusus;
 use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -65,7 +66,7 @@ public function getin(Request $request){
             // if($password==$data->password){
            
                 
-                Session::put('id',$data->id);
+                Session::put('id',$data->id_user);
                 Session::put('nama',$data->nama);
                 Session::put('username',$data->username);
                 Session::put('email',$data->email);
@@ -99,9 +100,9 @@ public function getin(Request $request){
         ->Where('kategori','LIKE','%' . 'novel' . '%')
         ->get();
 
-        $kus = DB::table('buku')
-        ->Where('kategori','LIKE','%' . 'khusus' . '%')
+        $kus = DB::table('khusus')
         ->get();
+
 
        
         return view('welcome',['data'=> $data,'edu'=>$edu,'nov'=>$nov,'kus'=>$kus]);
@@ -123,6 +124,17 @@ public function getin(Request $request){
         $kus = DB::table('khusus')
         ->get();
 
+        // $tren = DB::table('suka')
+        //         ->join('buku', 'buku.ISBN', '=', 'suka.ISBN')
+        //         ->join('user', 'user.id_user', '=', 'suka.id_user')
+        //          ->selectRaw('count(*) as total')
+        //          ->groupBy('suka.ISBN')
+        //          ->orderBy('total')
+                 
+        //          ->LIMIT(2)
+        //          ->get(); 
+
+        //          dd($tren);
        
         return view('user/welcome',['data'=> $data,'edu'=>$edu,'nov'=>$nov,'kus'=>$kus]);
     }

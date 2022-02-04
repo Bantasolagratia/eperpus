@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class antrian extends Model
+class khusus extends Model
 {
-    protected $table = 'antrian';
+    protected $table = 'khusus';
     protected $primaryKey = 'ISBN';
     protected $fillable = [
-        'ISBN','id_antrian','id_user'
+        'ISBN','judul','pengarang','penerbit','tahun','sinopsis','kategori','cover','file_buku','pengakses'
     ];
     public $timestamps = false;
 }

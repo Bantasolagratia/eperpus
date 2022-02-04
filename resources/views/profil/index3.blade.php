@@ -29,7 +29,7 @@
 </div>
 <div class="row top">
     <div class="col-sm-1">
-        <h6><b>disukai</b></h6>
+        <a href="profil" style="decoration:none; color:white">disukai</a>
     </div>
     <div class="col-sm-1">|</div>
     <div class="col-sm-1">
@@ -37,7 +37,7 @@
     </div>
     <div class="col-sm-1">|</div>
     <div class="col-sm-1">
-        <a href="profil3" style="decoration:none; color:white">khusus</a>
+        <h6><b>khusus</b></h6>
     </div>
     <div class="col-md-12">
         <div class="box">

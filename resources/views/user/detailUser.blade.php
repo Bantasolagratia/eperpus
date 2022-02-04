@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.layoutUser')
 
 @section('contents')
       <div class="detail row" id="home">
@@ -6,6 +6,8 @@
              <img  src="../img/cover/{{$data->cover}}" width="170px" height="300px">
              <div class="centered">
                
+               <a href="{{ url('/antrian',$data->ISBN) }}">tambah ke readlist </a><br>
+               <a href="{{ url('/disukai',$data->ISBN) }}">suka</a>
              </div>
           </div>
           <div class="col-md-10 row">
